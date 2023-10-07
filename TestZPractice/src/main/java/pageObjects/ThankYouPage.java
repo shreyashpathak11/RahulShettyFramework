@@ -9,15 +9,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import basePackage.Drivers;
 
-public class ThankYouPage {
+public class ThankYouPage extends Drivers {
 
 	WebDriver driver;
-	static WebDriverWait wait;
+	WebDriverWait wait;
 
 	public ThankYouPage(WebDriver driver, WebDriverWait wait) {
 
 		this.driver = driver;
-		ThankYouPage.wait = wait;
+		this.wait = wait;
 
 		PageFactory.initElements(driver, this);
 
@@ -27,12 +27,12 @@ public class ThankYouPage {
 	WebElement order;
 
 	@FindBy(xpath = "//td[@class='links']")
-	static WebElement dummy;
+	WebElement dummy;
 
 	@FindBy(xpath = "//td[@class='links']")
-	static WebElement actual;
+	WebElement actual;
 
-	public static void getOrderID(String trim) {
+	public void getOrderID(String trim) {
 
 		wait.until(ExpectedConditions.visibilityOf(dummy));
 		String expected = trim.trim();

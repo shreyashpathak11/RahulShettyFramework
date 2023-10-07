@@ -11,38 +11,38 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import basePackage.Drivers;
 
-public class PlaceOrder {
+public class PlaceOrder extends Drivers {
 
 	WebDriver driver;
-	static WebDriverWait wait;
+	WebDriverWait wait;
 
 	public PlaceOrder(WebDriver driver, WebDriverWait wait) {
 
 		this.driver = driver;
-		PlaceOrder.wait = wait;
+		this.wait = wait;
 
 		PageFactory.initElements(driver, this);
 
 	}
 
 	@FindBy(xpath = "//input[@type='text' and contains(@class,'text-validated') and contains(@class,'ng-valid')]")
-	static WebElement signInEmail;
+	WebElement signInEmail;
 
 	@FindBy(xpath = "//input[@placeholder='Select Country']")
-	static WebElement countryField;
+	WebElement countryField;
 
 	@FindBy(xpath = "//button[@type='button']//span")
-	static List<WebElement> country;
+	List<WebElement> country;
 
 	@FindBy(xpath = "//a[contains(@class,'btnn')]")
-	static WebElement placeOrderButton;
+	WebElement placeOrderButton;
 
-	public static void userName(String un) {
+	public void userName(String un) {
 
 		signInEmail.sendKeys(un);
 	}
 
-	public static void country(String countryName) {
+	public void country(String countryName) {
 
 		countryField.sendKeys(countryName);
 
@@ -59,10 +59,12 @@ public class PlaceOrder {
 		}
 	}
 
-	public static void placeOrderC() {
+	public ThankYouPage placeOrderC() {
 
 		wait.until(ExpectedConditions.elementToBeClickable(placeOrderButton));
 		placeOrderButton.click();
+
+		return tp;
 
 	}
 

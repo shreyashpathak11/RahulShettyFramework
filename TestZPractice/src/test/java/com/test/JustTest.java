@@ -3,30 +3,24 @@ package com.test;
 import org.testng.annotations.Test;
 
 import basePackage.Drivers;
-import pageObjects.AddressPage;
-import pageObjects.CartPage;
-import pageObjects.LandingPage;
-import pageObjects.PlaceOrder;
-import pageObjects.ProductCatalogue;
-import pageObjects.ThankYouPage;
+
 
 public class JustTest extends Drivers {
 
 	@Test
 	void testing() {
 
-		LandingPage.unMethod("qaindia50@gmail.com");
-		LandingPage.psMethod("Primo405$");
-		LandingPage.loginMethod();
-		ProductCatalogue.toast();
-		ProductCatalogue.itemList("adidas original");
-		CartPage.ClickOnCart();
-		AddressPage.checkProductList("adidas original");
-		PlaceOrder.userName("qaindia@gmail.com");
-		PlaceOrder.country("ind");
-		PlaceOrder.placeOrderC();
-		ThankYouPage.getOrderID(" dummywebsite@rahulshettyacademy.com ");
-		Drivers.tearDown();
-		System.out.println("TC Done and git added");
+		lp.unMethod("qaindia50@gmail.com");
+		lp.psMethod("Primo405$");
+		pp = lp.loginMethod();
+		pp.toast();
+		atc = pp.itemList("adidas original");
+		cp = atc.ClickOnCart();
+		po = cp.checkProductList("adidas original");
+		po.userName("qaindia@gmail.com");
+		po.country("ind");
+		tp = po.placeOrderC();
+		tp.getOrderID(" dummywebsite@rahulshettyacademy.com ");
+
 	}
 }

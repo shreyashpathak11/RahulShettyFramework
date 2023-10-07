@@ -11,33 +11,34 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import basePackage.Drivers;
 
-public class ProductCatalogue {
 
-	static WebDriver driver;
-	static WebDriverWait wait;
+public class ProductCatalogue extends Drivers {
+
+	WebDriver driver;
+	WebDriverWait wait;
 
 	public ProductCatalogue(WebDriver driver, WebDriverWait wait) {
 
-		ProductCatalogue.driver = driver;
-		ProductCatalogue.wait = wait;
+		this.driver = driver;
+		this.wait = wait;
 
 		PageFactory.initElements(driver, this);
 
 	}
 
 	@FindBy(id = "toast-container")
-	static WebElement toast;
+	WebElement toast;
 
 	@FindBy(xpath = "//h5//b")
-	static List<WebElement> itemList;
+	List<WebElement> itemList;
 
 	@FindBy(xpath = "//button[@class='btn w-10 rounded']")
-	static List<WebElement> addButton;
+	List<WebElement> addButton;
 
 	@FindBy(className = "ng-animating")
-	static WebElement animation;
+	WebElement animation;
 
-	public static void toast() {
+	public void toast() {
 
 		wait.until(ExpectedConditions.visibilityOf(toast));
 		toast.click();
@@ -45,7 +46,7 @@ public class ProductCatalogue {
 
 	}
 
-	public static void itemList(String productName) {
+	public AddToCart itemList(String productName) {
 		wait.until(ExpectedConditions.visibilityOfAllElements(itemList));
 
 		for (int i = 0; i < itemList.size(); i++) {
@@ -56,9 +57,13 @@ public class ProductCatalogue {
 
 				addButton.get(i).click();
 
+				break;
+
 			}
 
 		}
+
+		return atc;
 
 	}
 

@@ -8,8 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-import pageObjects.AddressPage;
 import pageObjects.CartPage;
+import pageObjects.AddToCart;
 import pageObjects.LandingPage;
 import pageObjects.PlaceOrder;
 import pageObjects.ProductCatalogue;
@@ -19,9 +19,15 @@ public class Drivers {
 
 	public static WebDriver driver;
 	public static WebDriverWait wait;
+	public LandingPage lp;
+	public ProductCatalogue pp;
+	public AddToCart atc;
+	public CartPage cp;
+	public PlaceOrder po;
+	public ThankYouPage tp;
 
 	@BeforeSuite
-	public static void driverMethod() {
+	public LandingPage driverMethod() {
 
 		driver = new ChromeDriver();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -30,12 +36,14 @@ public class Drivers {
 		driver.get("https://rahulshettyacademy.com/client");
 		System.out.println("Hello");
 
-		LandingPage lPage = new LandingPage(driver, wait);
-		ProductCatalogue pp = new ProductCatalogue(driver, wait);
-		CartPage cp = new CartPage(driver, wait);
-		AddressPage ap = new AddressPage(driver, wait);
-		PlaceOrder poOrder = new PlaceOrder(driver, wait);
-		ThankYouPage thPage = new ThankYouPage(driver, wait);
+		lp = new LandingPage(driver, wait);
+		pp = new ProductCatalogue(driver, wait);
+		atc = new AddToCart(driver, wait);
+		cp = new CartPage(driver, wait);
+		po = new PlaceOrder(driver, wait);
+		tp = new ThankYouPage(driver, wait);
+
+		return lp;
 
 	}
 

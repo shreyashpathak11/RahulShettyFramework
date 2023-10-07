@@ -1,7 +1,5 @@
 package pageObjects;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,46 +9,48 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import basePackage.Drivers;
 
-public class LandingPage  {
+public class LandingPage extends Drivers {
 
-	static WebDriver driver;
-	static WebDriverWait wait;
+	WebDriver driver;
+	WebDriverWait wait;
 
 	public LandingPage(WebDriver driver, WebDriverWait wait) {
 
-		LandingPage.driver = driver;
-		LandingPage.wait = wait;
+		this.driver = driver;
+		this.wait = wait;
 
 		PageFactory.initElements(driver, this);
 
 	}
 
 	@FindBy(xpath = "//input[@id='userEmail']")
-	static WebElement un;
+	WebElement un;
 
 	@FindBy(xpath = "//input[@id='userPassword']")
-	static WebElement ps;
+	WebElement ps;
 
 	@FindBy(xpath = "//input[@id='login']")
-	static WebElement loginButton;
+	WebElement loginButton;
 
-	public static void unMethod(String username) {
+	public void unMethod(String username) {
 
 		wait.until(ExpectedConditions.visibilityOf(un));
 		un.sendKeys(username);
 
 	}
 
-	public static void psMethod(String password) {
+	public void psMethod(String password) {
 		wait.until(ExpectedConditions.visibilityOf(ps));
 		ps.sendKeys(password);
 
 	}
 
-	public static void loginMethod() {
+	public ProductCatalogue loginMethod() {
 
 		wait.until(ExpectedConditions.visibilityOf(loginButton));
 		loginButton.click();
+
+		return pp;
 
 	}
 

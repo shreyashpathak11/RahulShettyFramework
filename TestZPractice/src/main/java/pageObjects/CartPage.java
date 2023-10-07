@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,10 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import basePackage.Drivers;
 
-public class CartPage {
+public class CartPage extends Drivers {
 
 	WebDriver driver;
-	static WebDriverWait wait;
+	WebDriverWait wait;
 
 	public CartPage(WebDriver driver, WebDriverWait wait) {
 
@@ -23,13 +25,23 @@ public class CartPage {
 
 	}
 
-	@FindBy(xpath = "//button[@routerlink='/dashboard/cart']")
-	static WebElement cartButton;
+	@FindBy(xpath = "//div[@class='cartSection']//h3")
+	List<WebElement> cartList;
 
-	public static void ClickOnCart() {
+	@FindBy(xpath = "//li[@class='totalRow']//button[@class='btn btn-primary']")
+	WebElement checkOut;
 
-		wait.until(ExpectedConditions.elementToBeClickable(cartButton));
-		cartButton.click();
+	public PlaceOrder checkProductList(String productName) {
+
+		boolean match = cartList.stream().anyMatch(s -> s.getText().equalsIgnoreCase(productName));
+
+		if (match) {
+
+			wait.until(ExpectedConditions.elementToBeClickable(checkOut));
+			checkOut.click();
+		}
+
+		return po;
 
 	}
 
