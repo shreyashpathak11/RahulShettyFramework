@@ -63,7 +63,7 @@ public class ProductCatalogue extends Drivers {
 
 		}
 
-		return atc;
+		return new AddToCart(driver, wait);
 
 	}
 

@@ -39,11 +39,6 @@ public class ThankYouPage extends Drivers {
 
 		String actualString = actual.getText();
 
-		if (actualString.equals(expected)) {
-
-			System.out.println("TC Passed");
-		}
-
 	}
 
 }

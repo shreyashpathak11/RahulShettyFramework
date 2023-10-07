@@ -41,7 +41,7 @@ public class CartPage extends Drivers {
 			checkOut.click();
 		}
 
-		return po;
+		return new PlaceOrder(driver, wait);
 
 	}
 

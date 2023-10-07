@@ -64,7 +64,7 @@ public class PlaceOrder extends Drivers {
 		wait.until(ExpectedConditions.elementToBeClickable(placeOrderButton));
 		placeOrderButton.click();
 
-		return tp;
+		return new ThankYouPage(driver, wait);
 
 	}
 

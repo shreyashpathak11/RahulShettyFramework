@@ -50,7 +50,7 @@ public class LandingPage extends Drivers {
 		wait.until(ExpectedConditions.visibilityOf(loginButton));
 		loginButton.click();
 
-		return pp;
+		return new ProductCatalogue(driver, wait);
 
 	}
 

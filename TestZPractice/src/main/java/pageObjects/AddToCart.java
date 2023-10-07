@@ -31,7 +31,7 @@ public class AddToCart extends Drivers {
 		wait.until(ExpectedConditions.elementToBeClickable(cartButton));
 		cartButton.click();
 
-		return cp;
+		return new CartPage(driver, wait);
 
 	}
 

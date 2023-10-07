@@ -6,16 +6,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 public class SampleTest {
 
+	public ChromeOptions options;
+
 	@Test
 	void simple() {
 
-		WebDriver driver = new ChromeDriver();
+		options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+
+		WebDriver driver = new ChromeDriver(options);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 		driver.manage().window().maximize();
