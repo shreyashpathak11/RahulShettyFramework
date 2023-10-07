@@ -35,7 +35,7 @@ public class SampleTest {
 		ln.sendKeys("Fifty");
 
 		WebElement email = driver.findElement(By.id("userEmail"));
-		email.sendKeys("qaindia50@gmail.com");
+		email.sendKeys("qaindia505620@gmail.com");
 
 		WebElement phone = driver.findElement(By.id("userMobile"));
 		phone.sendKeys("9191912244");
@@ -59,7 +59,7 @@ public class SampleTest {
 		WebElement registerButton = driver.findElement(By.xpath("//input[@type='submit']"));
 		registerButton.click();
 
-		// driver.close();
+		driver.close();
 
 	}
 

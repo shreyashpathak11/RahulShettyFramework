@@ -9,7 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LandingPage {
+import basePackage.Drivers;
+
+public class LandingPage  {
 
 	static WebDriver driver;
 	static WebDriverWait wait;
@@ -49,17 +51,6 @@ public class LandingPage {
 
 		wait.until(ExpectedConditions.visibilityOf(loginButton));
 		loginButton.click();
-
-	}
-
-	public static void goTo() {
-
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-		String url = "https://rahulshettyacademy.com/client";
-
-		driver.get(url);
 
 	}
 

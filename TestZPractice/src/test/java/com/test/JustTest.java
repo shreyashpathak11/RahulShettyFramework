@@ -15,8 +15,6 @@ public class JustTest extends Drivers {
 	@Test
 	void testing() {
 
-		// Drivers.driverMethod();
-		LandingPage.goTo();
 		LandingPage.unMethod("qaindia50@gmail.com");
 		LandingPage.psMethod("Primo405$");
 		LandingPage.loginMethod();

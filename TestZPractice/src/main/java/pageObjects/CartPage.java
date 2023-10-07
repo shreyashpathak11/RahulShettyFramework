@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import basePackage.Drivers;
+
 public class CartPage {
 
 	WebDriver driver;
@@ -22,8 +24,7 @@ public class CartPage {
 	}
 
 	@FindBy(xpath = "//button[@routerlink='/dashboard/cart']")
-	static
-	WebElement cartButton;
+	static WebElement cartButton;
 
 	public static void ClickOnCart() {
 
