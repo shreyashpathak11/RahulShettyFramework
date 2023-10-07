@@ -29,6 +29,6 @@ public class JustTest extends Drivers {
 		PlaceOrder.placeOrderC();
 		ThankYouPage.getOrderID(" dummywebsite@rahulshettyacademy.com ");
 		Drivers.tearDown();
-		System.out.println("TC Done");
+		System.out.println("TC Done and git added");
 	}
 }
