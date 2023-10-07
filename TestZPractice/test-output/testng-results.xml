@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-07T15:40:04 IST" name="Default suite" finished-at="2023-10-07T15:40:12 IST" duration-ms="8175">
+  <suite started-at="2023-10-08T00:05:47 IST" name="Default suite" finished-at="2023-10-08T00:05:51 IST" duration-ms="4894">
     <groups>
     </groups>
-    <test started-at="2023-10-07T15:40:04 IST" name="Default test" finished-at="2023-10-07T15:40:12 IST" duration-ms="8175">
-      <class name="extraPackage.JustTest">
-        <test-method is-config="true" signature="driverMethod()[pri:0, instance:extraPackage.JustTest@428640fa]" started-at="2023-10-07T15:40:00 IST" name="driverMethod" finished-at="2023-10-07T15:40:04 IST" duration-ms="3748" status="PASS">
+    <test started-at="2023-10-08T00:05:47 IST" name="Default test" finished-at="2023-10-08T00:05:51 IST" duration-ms="4894">
+      <class name="com.test.JustTest">
+        <test-method is-config="true" signature="driverMethod()[pri:0, instance:com.test.JustTest@2d710f1a]" started-at="2023-10-08T00:05:44 IST" name="driverMethod" finished-at="2023-10-08T00:05:47 IST" duration-ms="2645" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverMethod -->
-        <test-method signature="testing()[pri:0, instance:extraPackage.JustTest@428640fa]" started-at="2023-10-07T15:40:04 IST" name="testing" finished-at="2023-10-07T15:40:12 IST" duration-ms="8135" status="PASS">
+        <test-method signature="testing()[pri:0, instance:com.test.JustTest@2d710f1a]" started-at="2023-10-08T00:05:47 IST" name="testing" finished-at="2023-10-08T00:05:51 IST" duration-ms="4873" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testing -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:extraPackage.JustTest@428640fa]" started-at="2023-10-07T15:40:12 IST" name="tearDown" finished-at="2023-10-07T15:40:12 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.test.JustTest@2d710f1a]" started-at="2023-10-08T00:05:52 IST" name="tearDown" finished-at="2023-10-08T00:05:52 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- extraPackage.JustTest -->
+      </class> <!-- com.test.JustTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

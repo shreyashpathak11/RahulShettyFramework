@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="extraPackage.JustTest">
+      <class name="com.test.JustTest">
         <methods>
+          <include name="tearDown"/>
           <include name="testing"/>
+          <include name="driverMethod"/>
         </methods>
-      </class> <!-- extraPackage.JustTest -->
+      </class> <!-- com.test.JustTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
